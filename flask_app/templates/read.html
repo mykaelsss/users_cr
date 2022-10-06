@@ -17,16 +17,18 @@
                 <th>Last Name</th>
                 <th>Email</th>
                 <th>Created at</th>
+                <th>Actions</th>
             </tr>
         </thead >
         <tbody class="table-hover table-group-divider">
-            {% for one_user in every_users %}
+            {% for user in every_users %}
             <tr>
-                <td>{{ one_user.id }}</td>
-                <td>{{ one_user.first_name }}</td>
-                <td>{{ one_user.last_name }}</td>
-                <td>{{ one_user.email }}</td>
-                <td>{{ one_user.created_at }}</td>
+                <td>{{ user.id }}</td>
+                <td>{{ user.first_name }}</td>
+                <td>{{ user.last_name }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.created_at }}</td>
+                <td><a href="/user/show/{{ user.id }}">Show</a> | <a href="/user/edit/{{ user.id }}">Edit</a> | <a href="/user/delete/{{ user.id }}">Delete</a></td>
             </tr>
             {% endfor %}
         </tbody>
